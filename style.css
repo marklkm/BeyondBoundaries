@@ -298,7 +298,7 @@ canvas {
 
 
 /* ---------------------------------------------------
-    CANVAS CSS
+    ART FRAME
 ----------------------------------------------------- */
 .art-frame {
     border: 10px solid #0c0c0c; /* Black wooden frame effect */
@@ -310,4 +310,20 @@ canvas {
 .center-image {
     display: flex;
     justify-content: center;
+}
+
+
+
+/* ---------------------------------------------------
+    NAV
+----------------------------------------------------- */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
