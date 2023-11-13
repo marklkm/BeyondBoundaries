@@ -332,7 +332,12 @@ canvas {
 /* ---------------------------------------------------
     READ MORE BUTTON
 ----------------------------------------------------- */
-.btn-white-text {
-    color: white !important;
-    background-color: #000;
+.btn-custom {
+    background-color: black; /* Black background */
+    color: white; /* White text */
+}
+
+.btn-custom:hover {
+    background-color: #000; /* Slightly lighter black on hover */
+    color: white;
 }
