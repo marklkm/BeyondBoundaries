@@ -341,3 +341,12 @@ canvas {
     background-color: #000; /* Slightly lighter black on hover */
     color: white;
 }
+
+
+/* ---------------------------------------------------
+    IMAGE SLIDER
+----------------------------------------------------- */
+.carousel-item img {
+    margin: 0 auto; /* Center the image */
+    width: 50%; /* Set the width to 50% of the container */
+}
