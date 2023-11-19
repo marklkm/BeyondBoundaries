@@ -80,7 +80,7 @@ a:focus {
 a {
   color: #000000;
   font-family: arial;
-  text-decoration: none;
+  text-decoration: underline;
   text-transform: none;
   font-weight: bold;
 }
@@ -335,4 +335,17 @@ canvas {
     .custom-img {
         width: 70%; /* Full width on small devices */
     }
+}
+
+
+
+
+/* ---------------------------------------------------
+    GAP SPACING
+----------------------------------------------------- */
+
+.gap-20px {
+    display: block;
+    height: 20px;
+    width: 100%;
 }
