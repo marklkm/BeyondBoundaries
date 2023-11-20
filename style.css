@@ -371,3 +371,23 @@ canvas {
     height: 20px;
     width: 100%;
 }
+
+
+
+
+/* ---------------------------------------------------
+    CUSTOM PADDING
+----------------------------------------------------- */
+
+.custom-padding {
+    padding: 0 15px; /* Adjust the padding as needed */
+}
+
+/* Or for more specific control */
+.custom-padding-image {
+    padding-right: 10px; /* Adjust the right padding for the image column */
+}
+
+.custom-padding-text {
+    padding-left: 10px; /* Adjust the left padding for the text column */
+}
