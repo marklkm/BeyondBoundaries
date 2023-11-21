@@ -391,3 +391,12 @@ canvas {
 .custom-padding-text {
     padding-left: 10px; /* Adjust the left padding for the text column */
 }
+
+
+
+.toc-heading {
+    font-size: 2rem; /* Adjust the size as needed */
+}
+.toc-item {
+    font-size: 2rem; /* Adjust the size as needed */
+}
