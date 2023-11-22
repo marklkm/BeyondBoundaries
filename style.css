@@ -406,3 +406,16 @@ canvas {
 .toc-item {
     font-size: 2rem; /* Adjust the size as needed */
 }
+
+
+
+/* ---------------------------------------------------
+    GOLD FRAME FOR SECTION 10
+----------------------------------------------------- */
+
+.gold-frame {
+    border: 10px solid #D4AF37; /* Gold color */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for depth */
+    padding: 4px; /* Optional: Adds space between the image and the frame */
+    margin: 10px; /* Optional: Adds space outside the frame */
+}
