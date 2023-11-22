@@ -419,3 +419,10 @@ canvas {
     padding: 4px; /* Optional: Adds space between the image and the frame */
     margin: 10px; /* Optional: Adds space outside the frame */
 }
+
+.purple-frame {
+    border: 10px solid #663399; /* Rebecca Purple color */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for depth */
+    padding: 4px; /* Optional: Adds space between the image and the frame */
+    margin: 10px; /* Optional: Adds space outside the frame */
+}
