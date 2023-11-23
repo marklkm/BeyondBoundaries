@@ -432,3 +432,36 @@ canvas {
     font-weight: normal; /* Adjust as needed, but avoid making it look like a heading */
     /* Additional styling here */
   }
+
+
+  .frame-container {
+    position: relative;
+  }
+  
+  .old-painting-frame {
+    border: 10px solid #d4af37;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+  }
+  
+  .frame-icon {
+    position: absolute;
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+  }
+  
+  .lipstick-icon {
+    top: -10px; /* Adjust position as needed */
+    left: -10px;
+  }
+  
+  .mirror-icon {
+    bottom: -10px;
+    right: -10px;
+  }
+  
+  .comb-icon {
+    top: -10px;
+    right: -10px;
+  }
+  
