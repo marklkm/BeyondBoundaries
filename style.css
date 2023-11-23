@@ -426,3 +426,9 @@ canvas {
     padding: 4px; /* Optional: Adds space between the image and the frame */
     margin: 10px; /* Optional: Adds space outside the frame */
 }
+
+
+.emphasized-text {
+    font-weight: normal; /* Adjust as needed, but avoid making it look like a heading */
+    /* Additional styling here */
+  }
