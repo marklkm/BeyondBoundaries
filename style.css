@@ -439,7 +439,7 @@ canvas {
   }
   
   .old-painting-frame {
-    border: 20px solid #d4af37;
+    border: 10px solid #d4af37;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     padding: 5px;
   }
@@ -463,5 +463,17 @@ canvas {
   .comb-icon {
     top: -10px;
     right: -10px;
+  }
+  
+
+
+  .gallery-label {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    font-style: italic;
+    color: #555; /* Subtle color for the text */
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid #ddd; /* Adds an underline */
+    display: inline-block; /* Makes the border only as wide as the text */
+    padding-bottom: 0.25rem;
   }
   
