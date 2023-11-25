@@ -477,3 +477,16 @@ canvas {
     padding-bottom: 0.25rem;
   }
   
+
+
+  /* Custom class for the video wrapper */
+.video-wrapper {
+    border: 5px solid black; /* Thick black outer border */
+    padding: 3px; /* Space for the inner blue border */
+    background-color: blue; /* Inner blue border color */
+  }
+  
+  .ratio-16x9 {
+    background-color: #000; /* Optional: in case the video takes time to load, this will show a black background */
+  }
+  
