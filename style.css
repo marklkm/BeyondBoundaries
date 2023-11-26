@@ -177,7 +177,7 @@ a:visited {
 
 #sidebar {
     width: 100px; /* Adjusted for better visibility */
-    font-size: 1.2em; /* Adjusted for better readability */
+    font-size: 1.2  em; /* Adjusted for better readability */
     position: fixed;
     top: 0;
     left: 0;
@@ -428,10 +428,17 @@ canvas {
 }
 
 .blue-frame {
-    border: 10px solid #00008b; /* Rebecca Purple color */
+    border: 10px solid #00008b; /* Blue color */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for depth */
     padding: 4px; /* Optional: Adds space between the image and the frame */
     margin: 10px; /* Optional: Adds space outside the frame */
+}
+
+.black-frame {
+    border: 15px solid #000000; /* Black color */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for depth */
+    padding: 4px; /* Optional: Adds space between the image and the frame */
+    margin: 5px; /* Optional: Adds space outside the frame */
 }
 
 
