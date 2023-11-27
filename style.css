@@ -177,11 +177,11 @@ a:visited {
 
 #sidebar {
     width: 100px; /* Adjusted for better visibility */
-    font-size: 1.2  em; /* Adjusted for better readability */
+    font-size: 1em; /* Adjusted for better readability */
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 150vh;
     z-index: 999;
     background: rgb(94, 95, 96);
     color: #fff;
