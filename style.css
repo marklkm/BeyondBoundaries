@@ -504,3 +504,15 @@ canvas {
     background-color: #000; /* Optional: in case the video takes time to load, this will show a black background */
   }
   
+
+
+  .crochet-frame {
+    border: 4px solid #000000; /* Light brown color for the crochet effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow for depth */
+    padding: 20px; /* Adjusts the space between the image and the border */
+    background-image: url('images/crochet-pattern.png'); /* Path to a crochet pattern image */
+    background-size: cover; /* Ensures the background image covers the entire border */
+  }
+
+  
+  
