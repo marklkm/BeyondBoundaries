@@ -528,9 +528,9 @@ canvas {
     font-family: 'Kanit', sans-serif;
     font-size: 6em;
     font-weight: 700;
-    float: left;  
+    float: center;  
     line-height: 80px; 
-    padding: 20px 10px 0px 0px;
+    padding: 20px 10px 10px 10px;
   }
 
   
