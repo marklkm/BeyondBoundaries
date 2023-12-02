@@ -80,38 +80,45 @@
     </footer>-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
     <script>
       const canvas = document.getElementById("canvas");
       const ctx = canvas.getContext("2d");
       let drawing = false;
       let erasing = false; // State to track erasing mode
 
-      canvas.addEventListener("mousedown", () => (drawing = true));
-      canvas.addEventListener("mouseup", () => {
+      // Mouse Event Listeners
+      canvas.addEventListener("mousedown", startDrawing);
+      canvas.addEventListener("mouseup", stopDrawing);
+      canvas.addEventListener("mouseout", stopDrawing);
+      canvas.addEventListener("mousemove", draw);
+
+      // Touch Event Listeners
+      canvas.addEventListener("touchstart", startDrawingTouch);
+      canvas.addEventListener("touchend", stopDrawing);
+      canvas.addEventListener("touchcancel", stopDrawing);
+      canvas.addEventListener("touchmove", drawTouch);
+
+      function startDrawing(event) {
+        drawing = true;
+        draw(event);
+      }
+
+      function startDrawingTouch(event) {
+        event.preventDefault(); // Prevent scrolling when touching the canvas
+        drawing = true;
+        drawTouch(event);
+      }
+
+      function stopDrawing() {
+        if (!drawing) return;
         drawing = false;
         ctx.beginPath();
-      });
-      canvas.addEventListener("mousemove", draw);
-      document
-        .getElementById("colorPicker")
-        .addEventListener("input", (event) => {
-          ctx.strokeStyle = event.target.value;
-        });
-
-      function toggleEraser() {
-        erasing = !erasing;
-        if (erasing) {
-          ctx.globalCompositeOperation = "destination-out"; // Set eraser mode
-          ctx.lineWidth = 60; // You can adjust the eraser size here
-        } else {
-          ctx.globalCompositeOperation = "source-over"; // Set back to drawing mode
-          ctx.lineWidth = 5; // Reset to original line width
-        }
       }
 
       function draw(event) {
         if (!drawing) return;
-        ctx.lineWidth = 5;
+        ctx.lineWidth = erasing ? 10 : 5; // Adjust line width for erasing
         ctx.lineCap = "round";
 
         ctx.lineTo(
@@ -124,6 +131,33 @@
           event.clientX - canvas.offsetLeft,
           event.clientY - canvas.offsetTop
         );
+      }
+
+      function drawTouch(event) {
+        if (!drawing) return;
+        const touch = event.touches[0];
+        ctx.lineWidth = erasing ? 10 : 5; // Adjust line width for erasing
+        ctx.lineCap = "round";
+
+        ctx.lineTo(
+          touch.clientX - canvas.offsetLeft,
+          touch.clientY - canvas.offsetTop
+        );
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(
+          touch.clientX - canvas.offsetLeft,
+          touch.clientY - canvas.offsetTop
+        );
+      }
+
+      function toggleEraser() {
+        erasing = !erasing;
+        if (erasing) {
+          ctx.globalCompositeOperation = "destination-out"; // Set eraser mode
+        } else {
+          ctx.globalCompositeOperation = "source-over"; // Set back to drawing mode
+        }
       }
 
       function clearCanvas() {
@@ -153,6 +187,14 @@
       function goToHomePage() {
         window.location.href = "index.html"; // Redirects to the root of your website
       }
+
+      document
+        .getElementById("colorPicker")
+        .addEventListener("input", (event) => {
+          if (!erasing) {
+            ctx.strokeStyle = event.target.value;
+          }
+        });
     </script>
   </body>
 </html>
