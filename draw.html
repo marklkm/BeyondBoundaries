@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNIQUE: A Disabled Perspective - Interactive Art Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #canvas {
+        border: 1px solid black;
+      }
+      #instructions {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    <div id="instructions">
+      <strong>Instructions:</strong>
+      <ul>
+        <li>Click and drag your mouse on the canvas to draw.</li>
+        <li>
+          Choose a colour from the color picker to change the drawing colour.
+        </li>
+        <li>Click on 'Clear' to reset the canvas.</li>
+        <li>Click on the save buttons to download your artwork.</li>
+        <li>Click on 'Home' to return to the homepage.</li>
+      </ul>
+    </div>
+
+    <canvas id="canvas" width="500" height="500"></canvas><br />
+    <button onclick="clearCanvas()">Clear</button>
+    <button onclick="download('png')">Save as PNG</button>
+    <button onclick="download('jpeg')">Save as JPEG</button>
+    <button onclick="download('pdf')">Save as PDF</button>
+    <input type="color" id="colorPicker" value="#000000" /><br /><br />
+    <button onclick="goToHomePage()">Home</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      let drawing = false;
+
+      canvas.addEventListener("mousedown", () => (drawing = true));
+      canvas.addEventListener("mouseup", () => {
+        drawing = false;
+        ctx.beginPath();
+      });
+      canvas.addEventListener("mousemove", draw);
+      document
+        .getElementById("colorPicker")
+        .addEventListener("input", (event) => {
+          ctx.strokeStyle = event.target.value;
+        });
+
+      function draw(event) {
+        if (!drawing) return;
+        ctx.lineWidth = 5;
+        ctx.lineCap = "round";
+
+        ctx.lineTo(
+          event.clientX - canvas.offsetLeft,
+          event.clientY - canvas.offsetTop
+        );
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(
+          event.clientX - canvas.offsetLeft,
+          event.clientY - canvas.offsetTop
+        );
+      }
+
+      function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      function download(format) {
+        if (format === "png" || format === "jpeg") {
+          const link = document.createElement("a");
+          link.download = `drawing.${format}`;
+          link.href = canvas.toDataURL(`image/${format}`);
+          link.click();
+        } else if (format === "pdf") {
+          const pdf = new jsPDF();
+          pdf.addImage(
+            canvas.toDataURL("image/jpeg"),
+            "JPEG",
+            0,
+            0,
+            210,
+            210 * (canvas.height / canvas.width)
+          );
+          pdf.save("drawing.pdf");
+        }
+      }
+
+      function goToHomePage() {
+        window.location.href = "index.html"; // Redirects to the root of your website
+      }
+    </script>
+  </body>
+</html>
