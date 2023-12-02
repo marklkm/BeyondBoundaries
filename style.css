@@ -543,3 +543,13 @@ canvas {
     width: auto;
     object-fit: contain; /* This ensures the image is scaled correctly within the set dimensions */
 }
+
+
+/* ---------------------------------------------------
+    CANVAS CSS
+----------------------------------------------------- */
+
+canvas {
+    border: 1px solid black;
+    cursor: crosshair;
+}
