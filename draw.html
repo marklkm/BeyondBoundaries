@@ -24,9 +24,14 @@
     <div class="container mt-4">
       <section aria-labelledby="instructions-heading">
         <h1>PRACTICE YOUR ART ON THE CANVAS</h1>
+
+        <button class="btn btn-primary mb-3" onclick="goToHomePage()">
+          Back to Home Page
+        </button>
+
         <h2 id="instructions-heading" class="visually-hidden">Instructions</h2>
         <div id="instructions" class="mb-3">
-          <strong>Instructions:</strong>
+          <strong>INSTRUCTIONS:</strong>
           <ul class="list-unstyled">
             <li>Click and drag your mouse on the canvas to draw.</li>
             <li>
@@ -48,9 +53,9 @@
         <button class="btn btn-success" onclick="download('png')">
           Save as PNG
         </button>
-        <button class="btn btn-success" onclick="download('jpeg')">
+        <!--<button class="btn btn-success" onclick="download('jpeg')">
           Save as JPEG
-        </button>
+        </button>-->
         <button class="btn btn-success" onclick="download('pdf')">
           Save as PDF
         </button>
@@ -68,6 +73,16 @@
         Back to Home Page
       </button>
     </div>
+
+    <!-- Footer -->
+    <!--<footer class="bg-light text-center text-lg-start mt-4">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        2023
+        <a class="text-dark" href="index.html"
+          >Beyond Boundaries: Art Unleashed</a
+        >
+      </div>
+    </footer>-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script>
