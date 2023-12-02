@@ -52,6 +52,8 @@
         <button class="btn btn-success" onclick="download('pdf')">
           Save as PDF
         </button>
+        <button class="btn btn-warning" onclick="toggleEraser()">Eraser</button>
+        <!-- Eraser Button -->
       </div>
       <label for="floatingInput">Colour Picker</label>
       <input
@@ -72,6 +74,7 @@
       const canvas = document.getElementById("canvas");
       const ctx = canvas.getContext("2d");
       let drawing = false;
+      let erasing = false; // State to track erasing mode
 
       canvas.addEventListener("mousedown", () => (drawing = true));
       canvas.addEventListener("mouseup", () => {
@@ -84,6 +87,17 @@
         .addEventListener("input", (event) => {
           ctx.strokeStyle = event.target.value;
         });
+
+      function toggleEraser() {
+        erasing = !erasing;
+        if (erasing) {
+          ctx.globalCompositeOperation = "destination-out"; // Set eraser mode
+          ctx.lineWidth = 10; // You can adjust the eraser size here
+        } else {
+          ctx.globalCompositeOperation = "source-over"; // Set back to drawing mode
+          ctx.lineWidth = 5; // Reset to original line width
+        }
+      }
 
       function draw(event) {
         if (!drawing) return;
