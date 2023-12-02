@@ -42,6 +42,8 @@
 
       <canvas id="canvas" width="500" height="500"></canvas>
       <div class="button-group my-2">
+        <button class="btn btn-warning" onclick="toggleEraser()">Eraser</button>
+        <!-- Eraser Button -->
         <button class="btn btn-secondary" onclick="clearCanvas()">Clear</button>
         <button class="btn btn-success" onclick="download('png')">
           Save as PNG
@@ -52,8 +54,6 @@
         <button class="btn btn-success" onclick="download('pdf')">
           Save as PDF
         </button>
-        <button class="btn btn-warning" onclick="toggleEraser()">Eraser</button>
-        <!-- Eraser Button -->
       </div>
       <label for="floatingInput">Colour Picker</label>
       <input
@@ -92,7 +92,7 @@
         erasing = !erasing;
         if (erasing) {
           ctx.globalCompositeOperation = "destination-out"; // Set eraser mode
-          ctx.lineWidth = 10; // You can adjust the eraser size here
+          ctx.lineWidth = 60; // You can adjust the eraser size here
         } else {
           ctx.globalCompositeOperation = "source-over"; // Set back to drawing mode
           ctx.lineWidth = 5; // Reset to original line width
