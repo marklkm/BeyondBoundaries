@@ -552,3 +552,23 @@ canvas {
     border: 1px solid black;
     cursor: crosshair;
 }
+
+
+
+/* ---------------------------------------------------
+    HIGH CONTRAST CSS
+----------------------------------------------------- */
+
+
+.high-contrast-button {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border: 2px solid #fff; /* White border for additional contrast */
+    font-weight: bold;
+}
+
+.high-contrast-button.active, .high-contrast-button:hover, .high-contrast-button:focus {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    border-color: #000;
+}
