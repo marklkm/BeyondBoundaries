@@ -1,13 +1,111 @@
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+/* General Styles */
 body {
-    font-family: 'Poppins', sans-serif, Arial, Helvetica, sans-serif; /* Fallback font */
-    background: #ffffff;
-    color: #000000;
-    font-size: 16px; /* Default font size; consider using relative units like 'em' or 'rem' */
-    line-height: 1.6; /* Improved readability */
+    background-color: #FFFFFF; /* White background */
+    color: #000000; /* Black text for high readability */
+    font-family: Arial, sans-serif;
 }
+
+/* Button Styles */
+button, .btn-primary {
+    background-color: #0054A6; /* Strong Blue */
+    color: #FFFFFF; /* White text */
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover, .btn-primary:hover {
+    background-color: #003f7f; /* Darker Blue for hover effect */
+}
+
+/* Link Styles */
+a {
+    color: #0054A6; /* Strong Blue */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #003f7f; /* Darker Blue for hover */
+    text-decoration: none;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #000000; /* Black background for high contrast */
+    color: #FFFFFF; /* White text */
+}
+
+.sidebar .nav-link {
+    color: #FFFFFF; /* White text for sidebar links */
+}
+
+.sidebar .nav-link.active {
+    background-color: #FFA500; /* Accessible Orange for active link */
+    color: #000000; /* Black text on active link */
+}
+
+/* Header Styles */
+h1, h2, h3, h4, h5, h6 {
+    color: #0054A6; /* Strong Blue for headings */
+    font-weight: bold;
+}
+
+/* Card Styles */
+.card {
+    border: 1px solid #808080; /* Gray border */
+    background-color: #FFFFFF; /* White background for cards */
+}
+
+.card-title {
+    color: #0054A6; /* Strong Blue for card titles */
+}
+
+.card-text {
+    color: #000000; /* Black text for card content */
+}
+
+/* Accent Elements */
+.emphasized-text {
+    color: #4CAF50; /* Accessible Green for emphasized text */
+    font-weight: bold;
+}
+
+/* Divider Line */
+.line {
+    border-bottom: 2px solid #808080; /* Gray divider line */
+    margin: 20px 0;
+}
+
+/* High Contrast Button */
+#highContrastButton {
+    background-color: #FFA500; /* Accessible Orange */
+    color: #000000; /* Black text */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#highContrastButton:hover {
+    background-color: #cc8400; /* Darker Orange for hover */
+}
+
+/* Reset Contrast Button */
+#resetContrastButton {
+    background-color: #0054A6; /* Strong Blue */
+    color: #FFFFFF; /* White text */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#resetContrastButton:hover {
+    background-color: #003f7f; /* Darker Blue for hover */
+}
+
 
 /* Accessibility Improvements */
 @media screen and (min-width: 768px) {
@@ -559,16 +657,28 @@ canvas {
     HIGH CONTRAST CSS
 ----------------------------------------------------- */
 
-
-.high-contrast-button {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
-    border: 2px solid #fff; /* White border for additional contrast */
-    font-weight: bold;
+/* High Contrast Button */
+#highContrastButton {
+    background-color: #FFA500; /* Accessible Orange */
+    color: #000000; /* Black text */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
 }
 
-.high-contrast-button.active, .high-contrast-button:hover, .high-contrast-button:focus {
-    background-color: #fff; /* White background */
-    color: #000; /* Black text */
-    border-color: #000;
+#highContrastButton:hover {
+    background-color: #cc8400; /* Darker Orange for hover */
+}
+
+/* Reset Contrast Button */
+#resetContrastButton {
+    background-color: #0054A6; /* Strong Blue */
+    color: #FFFFFF; /* White text */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#resetContrastButton:hover {
+    background-color: #003f7f; /* Darker Blue for hover */
 }

@@ -1,14 +1,15 @@
-// HIGH CONTRAST BUTTONS
-
 document.addEventListener("DOMContentLoaded", function () {
   const highContrastBtn = document.getElementById("highContrastButton");
   const resetContrastBtn = document.getElementById("resetContrastButton");
+  const mainContent = document.querySelector("main");
 
-  highContrastBtn.addEventListener("click", function () {
-    this.classList.add("active");
-  });
+  if (highContrastBtn && resetContrastBtn && mainContent) {
+    highContrastBtn.addEventListener("click", function () {
+      mainContent.classList.add("high-contrast");
+    });
 
-  resetContrastBtn.addEventListener("click", function () {
-    highContrastBtn.classList.remove("active");
-  });
+    resetContrastBtn.addEventListener("click", function () {
+      mainContent.classList.remove("high-contrast");
+    });
+  }
 });
